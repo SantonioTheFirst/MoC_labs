@@ -124,7 +124,7 @@ class Lab1:
 # In[733]:
 
 
-a = Lab1('vars', '01')
+a = Lab1('vars', 10)
 
 
 # In[734]:
@@ -166,7 +166,7 @@ pd.DataFrame(PM_C)
 # In[739]:
 
 
-assert PM_C.sum().round(3) == 20.0, 'Should be 20.0'
+assert PM_C.sum().round() == 20.0, 'Should be 20.0'
 
 
 # In[740]:
