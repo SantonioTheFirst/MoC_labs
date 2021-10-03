@@ -10,7 +10,7 @@ from scipy.stats import bernoulli as brnl
 import os
 
 
-# In[732]:
+# In[2]:
 
 
 class Lab1:
@@ -121,13 +121,15 @@ class Lab1:
         return 'Lab1 is not so clear :('
 
 
-# In[733]:
+# # 10 Вариант
+
+# In[3]:
 
 
 a = Lab1('vars', 10)
 
 
-# In[734]:
+# In[4]:
 
 
 PC = a.calc_PC()
@@ -135,13 +137,13 @@ print('Распределение шифртекста:')
 pd.DataFrame(PC)
 
 
-# In[735]:
+# In[5]:
 
 
 assert PC.sum().round(10) == 1.0, 'Should be 1.0'
 
 
-# In[736]:
+# In[6]:
 
 
 PMC = a.calc_PMC()
@@ -149,13 +151,13 @@ print('Распеделение открытых текстов и шифрте�
 pd.DataFrame(PMC)
 
 
-# In[737]:
+# In[7]:
 
 
 assert PMC.sum().round(10) == 1.0, 'Should be 1.0'
 
 
-# In[738]:
+# In[12]:
 
 
 PM_C = a.calc_PM_C(PC, PMC)
@@ -163,22 +165,86 @@ print('Условное распределение:')
 pd.DataFrame(PM_C)
 
 
-# In[739]:
+# In[13]:
 
 
 assert PM_C.sum().round() == 20.0, 'Should be 20.0'
 
 
-# In[740]:
+# In[14]:
 
 
 print('Детерминистическая решающая функция и потери:')
 a.calc_Bayes(PC, PM_C)
 
 
-# In[741]:
+# In[15]:
 
 
 print('Стохастическая функция и потери:')
 a.calc_stochastic(PC, PM_C)
+
+
+# # 6 Вариант
+
+# In[29]:
+
+
+b = Lab1('vars', '06')
+
+
+# In[30]:
+
+
+PC = b.calc_PC()
+print('Распределение шифртекста:')
+pd.DataFrame(PC)
+
+
+# In[31]:
+
+
+assert PC.sum().round(10) == 1.0, 'Should be 1.0'
+
+
+# In[32]:
+
+
+PMC = b.calc_PMC()
+print('Распеделение открытых текстов и шифртекстов:')
+pd.DataFrame(PMC)
+
+
+# In[33]:
+
+
+assert PMC.sum().round(10) == 1.0, 'Should be 1.0'
+
+
+# In[34]:
+
+
+PM_C = b.calc_PM_C(PC, PMC)
+print('Условное распределение:')
+pd.DataFrame(PM_C)
+
+
+# In[35]:
+
+
+assert PM_C.sum().round() == 20.0, 'Should be 20.0'
+
+
+# In[36]:
+
+
+print('Детерминистическая решающая функция и потери:')
+b.calc_Bayes(PC, PM_C)
+
+
+# In[37]:
+
+
+print('Стохастическая функция и потери:')
+b.calc_stochastic(PC, PM_C)
 
